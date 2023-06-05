@@ -1,7 +1,8 @@
 import "./CostItem.css";
 import { DateComponent } from "./date/date.component";
+import { PropsWithChildren } from "react";
 
-interface ConstItemProps {
+interface CostItemProps {
   title: string;
   date: Date;
   price: number;
@@ -11,7 +12,7 @@ export function CostItemComponent({
   date,
   price,
   title,
-}: ConstItemProps): JSX.Element {
+}: PropsWithChildren<CostItemProps>): JSX.Element {
   return (
     <div className="cost-item">
       <DateComponent date={date} />

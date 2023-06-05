@@ -1,17 +1,10 @@
-import { CostItemComponent } from "./components/CostItem/CostItem.component";
+import { CostsComponent } from "./components/Cost/Costs.component";
 
 function App() {
-  const data = [
-    { title: "Fridge", price: 1000, date: new Date(Date.now()) },
-    { title: "Fridge", price: 1000, date: new Date(Date.now()) },
-    { title: "Fridge", price: 1000, date: new Date(Date.now()) },
-  ];
   return (
-    <div className="App">
-      {data.map((item) => {
-        return <CostItemComponent {...item} />;
-      })}
-    </div>
+    <>
+      <CostsComponent />
+    </>
   );
 }
 
