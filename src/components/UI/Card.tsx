@@ -2,7 +2,7 @@ import "./Card.css";
 import { PropsWithChildren } from "react";
 
 interface ICard {
-  className: string;
+  className?: string;
 }
 export function Card({
   children,
