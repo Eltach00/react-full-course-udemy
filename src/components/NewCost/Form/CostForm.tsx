@@ -1,3 +1,4 @@
+import { IData } from "../../../interfaces/data.interface";
 import { NewCostButton } from "../Button/NewCostButton";
 import "./CostForm.css";
 import { useState } from "react";
@@ -14,12 +15,12 @@ export function CostForm({
   const [data, setData] = useState({ title: "", price: "", date: "" });
   const submitHandler = (e) => {
     e.preventDefault();
-    const sendData = {
+    const sendData: IData = {
       ...data,
+      price: parseFloat(data.price),
       date: new Date(data.date),
       id: Math.random().toString(),
     };
-    console.log(sendData);
     newCostHanlder(sendData);
     setData({ title: "", price: "", date: "" });
   };

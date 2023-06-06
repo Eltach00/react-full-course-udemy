@@ -3,9 +3,10 @@ import { DateComponent } from "./date/date.component";
 import { PropsWithChildren } from "react";
 
 interface CostItemProps {
+  id: string;
   title: string;
   date: Date;
-  price: number;
+  price: string;
 }
 
 export function CostItemComponent({

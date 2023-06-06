@@ -1,17 +1,33 @@
 import { useState } from "react";
 import { CostsComponent } from "./components/CostItem/Cost/Costs.component";
 import { NewCost } from "./components/NewCost/NewCost";
+import { IData } from "./interfaces/data.interface";
 
-const initialData = [
-  { title: "Fridge", price: 1000, date: new Date(Date.now()) },
-  { title: "Fridge", price: 1000, date: new Date(Date.now()) },
-  { title: "Fridge", price: 1000, date: new Date(Date.now()) },
+const initialData: IData[] = [
+  {
+    id: Math.random().toString(),
+    title: "Fridge",
+    price: 1000,
+    date: new Date(Date.now()),
+  },
+  {
+    id: Math.random().toString(),
+    title: "Fridge",
+    price: 1000,
+    date: new Date(Date.now()),
+  },
+  {
+    id: Math.random().toString(),
+    title: "Fridge",
+    price: 1000,
+    date: new Date(Date.now()),
+  },
 ];
 function App() {
-  const [data, setNewData] = useState(initialData);
+  const [data, setNewData] = useState<IData[]>(initialData);
 
-  const newCostHanlder = (data) => {
-    setNewData((pr) => [...pr, data]);
+  const newCostHanlder = (data: IData) => {
+    setNewData((pr): IData[] => [data, ...pr]);
   };
   return (
     <>

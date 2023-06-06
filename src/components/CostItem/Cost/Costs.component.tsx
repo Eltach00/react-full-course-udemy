@@ -1,20 +1,18 @@
 import "./Cost.css";
-import { CostItemComponent } from "../CostItem.component";
 import { Card } from "../../UI/Card";
 import { useEffect, useState } from "react";
 import { YearFilter } from "../YearFilter/YearFilter";
+import { CostList } from "../CostList/CostList";
+import { CostDiagram } from "../CostDiagram/CostDiagram";
+import { IData } from "../../../interfaces/data.interface";
 
 interface CostsProps {
-  data: {
-    title: string;
-    date: Date;
-    price: number;
-  }[];
+  data: IData[];
 }
 
 export function CostsComponent({ data }: CostsProps): JSX.Element {
   const [costs, setCosts] = useState(data);
-  const [year, setYear] = useState(new Date().getFullYear().toString());
+  const [year, setYear] = useState("2023");
 
   useEffect(() => {
     setCosts(data);
@@ -24,12 +22,15 @@ export function CostsComponent({ data }: CostsProps): JSX.Element {
     setYear(e.target.value);
   };
 
+  const filterCosts = costs.filter(
+    (item) => item.date.getFullYear().toString() === year
+  );
+
   return (
     <Card className="costs">
       <YearFilter yearChangeHandler={yearChangeHandler} year={year} />
-      {costs.map((item, i) => {
-        return <CostItemComponent key={i} {...item} />;
-      })}
+      <CostDiagram costs={costs} />
+      <CostList costs={filterCosts} />
     </Card>
   );
 }

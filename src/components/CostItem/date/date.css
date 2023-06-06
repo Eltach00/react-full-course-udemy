@@ -9,6 +9,7 @@
     border-radius: 12px;
     align-items: center;
     justify-content: center;
+    margin-left: 10px;
 }
 
 .cost-date__month {
