@@ -1,11 +1,7 @@
+import { createPortal } from "react-dom";
 import styles from "./Modal.module.css";
-export function Modal({ modaleClose }): JSX.Element {
-  const outsideHandle = (e) => {
-    const div = e.target as HTMLDivElement;
-    if (div.dataset.id === "modal") {
-      modaleClose();
-    }
-  };
+
+const PortalModel = ({ outsideHandle, modaleClose }) => {
   return (
     <div onClick={outsideHandle} data-id="modal" className={styles.modal}>
       <div className={styles.container}>
@@ -18,5 +14,21 @@ export function Modal({ modaleClose }): JSX.Element {
         </div>
       </div>
     </div>
+  );
+};
+export function Modal({ modaleClose }): JSX.Element {
+  const outsideHandle = (e) => {
+    const div = e.target as HTMLDivElement;
+    if (div.dataset.id === "modal") {
+      modaleClose();
+    }
+  };
+  return (
+    <>
+      {createPortal(
+        <PortalModel outsideHandle={outsideHandle} modaleClose={modaleClose} />,
+        document.getElementById("here")
+      )}
+    </>
   );
 }
