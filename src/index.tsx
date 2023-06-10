@@ -1,16 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./src4/App";
-import { AuthContextProvider } from "./src4/context/auth-ctx";
+import App from "./japan-restoran/App";
+import { CartContextProvider } from "./japan-restoran/store/Cart";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <AuthContextProvider>
+    <CartContextProvider>
       <App />
-    </AuthContextProvider>
+    </CartContextProvider>
   </React.StrictMode>
 );

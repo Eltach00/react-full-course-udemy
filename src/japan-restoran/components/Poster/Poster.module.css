@@ -1,0 +1,14 @@
+.container {
+    background: rgb(155, 7, 155);
+    opacity: 0.95;
+    border-radius: 20px;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    z-index: 1;
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    width: 60%;
+
+}
