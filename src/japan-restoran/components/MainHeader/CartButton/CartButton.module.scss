@@ -1,0 +1,17 @@
+.cart {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 40px;
+  background: rgb(95, 0, 95);
+  color: white;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 1.2rem;
+  cursor: pointer;
+  width: 15%;
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+}

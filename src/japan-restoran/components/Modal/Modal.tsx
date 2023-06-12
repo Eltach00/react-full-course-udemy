@@ -1,9 +1,9 @@
 import { createPortal } from "react-dom";
 import styles from "./Modal.module.css";
-import CartContext from "../../store/Cart";
 import { useContext, useState } from "react";
 import CartItem from "./CartItem/CartItem";
 import { IData } from "../../intefaces/data.interface";
+import CartContext from "../../store/cart-context";
 
 const PortalModel = ({ outsideHandle, modaleClose }) => {
   const { cart } = useContext(CartContext);
